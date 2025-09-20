@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Optional: custom font for cuteness */
+body {
+  font-family: "Segoe UI Emoji", system-ui, sans-serif;
+}
+/* Extra utilities for 3D flip effect */
+.perspective {
+  perspective: 1000px;
+}
+.transform-style-preserve-3d {
+  transform-style: preserve-3d;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+}
+.rotate-y-180{
+  transform: rotateY(180deg) !important;
+}
+.reset-btn {
+  background: linear-gradient(135deg, #ec4899, #8b5cf6);
+  color: white;
+  font-weight: 800;
+  padding: 14px 40px;
+  border-radius: 50px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  text-transform: uppercase;
+  font-size: 18px;
+  letter-spacing: 1px;
+  border: none;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.reset-btn:hover {
+  transform: scale(1.1) translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+}
+
+
+/* Container to hold both stats */
+.stats-container {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  margin-top: 2rem;
+}
+
+/* Base card style */
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  background: #fff;
+  border-radius: 1rem;
+  padding: 2rem 3rem;
+  margin:0.5rem;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.stat-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* Stat value (number) */
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+
+.stat-card.pink .stat-value {
+  color: #ec4899; /* Tailwind pink-500 */
+}
+
+.stat-card.purple .stat-value {
+  color:  #9333ea; /* Tailwind purple-600 */
+}
+
+/* Stat label (Moves / Matches) */
+.stat-label {
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #4b5563; /* Tailwind gray-700 */
+}
+/* Responsive tweak for smaller screens */
+@media (max-width: 640px) {
+  .stat-card {
+    padding: 1.5rem 2rem; /* ✅ smaller padding on mobile */
+    font-size: 0.9rem;
+  }
+  .stat-value {
+    font-size: 2rem; /* ✅ smaller numbers on mobile */
+  }
+}
